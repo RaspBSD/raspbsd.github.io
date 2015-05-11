@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Welcome to RaspBSD.org -- FreeBSD on the Rasperry Pi, Raspberry Pi 2, Cubieboard, Banana Pi and BeagleBone Black">
+    <meta name="author" content="Brad Davis">
+    <!-- <link rel="icon" href="../../favicon.ico"> -->
+
+    <title>Welcome to RaspBSD</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="theme.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body role="document">
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">RaspBSD</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#download">Downloads</a></li>
+            <li><a href="#image-info">Image Info</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container theme-showcase" role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1>Welcome to RaspBSD</h1>
+        <p>RaspBSD is a image of FreeBSD 11 that is preconfigured in two different images for Raspberry Pi Computers (and more soon).</p>
+      </div>
+
+
+      <div class="page-header">
+        <h1>Download</h1>
+      </div>
+      <div class="page-header">
+        <a name="download"></a>
+        <h3>Raspberry Pi B and B+</h3>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Graphical Images</h3>
+            </div>
+            <div class="panel-body">
+              Designed to be connected to a display and used with a keyboard/mouse.  Currently no GUI is enabled.
+              <ul>
+                <!--# include file="images/rpi-b-gui.html" -->
+              </ul>
+            </div>
+          </div>
+        </div><!-- /.col-sm-6 -->
+        <div class="col-sm-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Console Images</h3>
+            </div>
+            <div class="panel-body">
+              Designed for serial console / network usage.
+              <ul>
+                <!--# include file="images/rpi-b-console.html" -->
+              </ul>
+            </div>
+          </div>
+        </div><!-- /.col-sm-6 -->
+      </div>
+
+      <div class="page-header">
+        <h3>Raspberry Pi 2 Model B</h3>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Graphical Images</h3>
+            </div>
+            <div class="panel-body">
+              Designed to be connected to a display and used with a keyboard/mouse.  Currently no GUI is enabled.
+              <ul>
+                <!--# include file="images/rpi2-gui.html" -->
+              </ul>
+            </div>
+          </div>
+        </div><!-- /.col-sm-6 -->
+        <div class="col-sm-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Console Images</h3>
+            </div>
+            <div class="panel-body">
+              Designed for serial console / network usage.
+              <ul>
+                <!--# include file="images/rpi2-console.html" -->
+              </ul>
+            </div>
+          </div>
+        </div><!-- /.col-sm-6 -->
+      </div>
+
+      <div class="page-header">
+        <h3>Banana Pi</h3>
+      </div>
+      <p>
+        Coming soon..
+      </p>
+
+      <div class="page-header">
+        <h3>BeagleBone Black</h3>
+      </div>
+      <p>
+        Coming soon..
+      </p>
+
+      <div class="page-header">
+        <h2>Image information</h2>
+      </div>
+      <div>
+        <a name="image-info"></a>
+        <p><b>What is the difference between the Console Image and the Graphical Images?</b></p>
+        <p>The Graphical Images currently only have a VideoCore kernel modules added to them.  In the future a GUI and other tools will be preloaded.  The console images do not have the VideoCore image and are designed to be used via serial or completely headless.</p>
+        <p><b>What is the login credentials for the images?</b></p>
+        <p>The username is raspberry and the password is raspberry.  The root account does not have a password.</p>
+        <p><b>Where are the packages to install?</b></p>
+        <p>Currently work is ongoing to build and publish offical FreeBSD packages.  Once those are published, these images will use them.</p>
+        <p><b>How are these images built?</b></p>
+        <p>All images are built using <a href="https://github.com/freebsd/crochet">Crochet</a>.</p>
+        <p><b>What is a Raspberry Pi?</b></p>
+        <p>"The Raspberry Pi is a credit-card sized computer that plugs into your TV and a keyboard. It is a capable little computer which can be used in electronics projects, and for many of the things that your desktop PC does, like spreadsheets, word-processing and games. It also plays high-definition video. We want to see it being used by kids all over the world to learn programming." --The <a href="https://www.raspberrypi.org/help/faqs/#introWhatIs">Raspberry Pi Foundation</a></p>
+        <p><b>Where can I get a Raspberry Pi?</b></p>
+        <p>Your local electronic shop or an online retailer like <a href="https://www.sparkfun.com/categories/233">Sparkfun</a>.</p>
+        <p><b>What about support for the Raspberry Pi Camera?</b></p>
+        <p>Work is ongoing to add support for the Raspberry Pi Camera applications to The FreeBSD Ports Tree</p>
+        <p><b>How do I use these images?</b></p>
+        <p><i>Note these images will overwrite the entire SD Card!</i></p>
+        <p>For Windows decompress them using a tool like <a href="http://www.7-zip.org/">7-Zip</a> then copy the image to your SD Card using something like <a href="http://www.chrysocome.net/dd">DD for Windows</a>.</p>
+        <p>For Mac users decompress them using Archive Utility and then copy the image to your SD Card by running something like: <pre>sudo dd bs=1m if=FreeBSD-armv6-11.0-RPI-B-r282247.img of=/dev/disk2</pre></p>
+      </div>
+
+      <div class="page-header">
+        <h2>About</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-9">
+          <a name="about"></a>
+          <p>RaspBSD is a volunteer project headed by FreeBSD Committer Brad Davis (brd@).</p>
+
+          <p>The Goal of this project is to build images easily useable by anyone.  Sometimes that means images preloaded with different packages to help new users get started.  Initially they will start off pretty basic, but will expand in different directions to support different goals.  Initial goals include Education and Entertainment.  All of our images are built using publicly available tools and any enhancements will be pushed upstream.</p>
+
+          <p>If you like what we are doing, please consider donating to the <a href="https://www.freebsdfoundation.org/">FreeBSD Foundation</a>.</p>
+        </div>
+        <div class="col-md-2">
+          <a href="http://www.FreeBSD.org"><img src="powered_by_freebsd.gif"></a>
+        </div>
+      </div>
+
+      <div class="well">
+        <p>The mark FreeBSD is a registered trademark of The FreeBSD
+	Foundation and is used by The RaspBSD Project with the
+	permission of <a href="https://www.freebsdfoundation.org/documents/Guidelines.shtml">The
+	FreeBSD Foundation</a>.  RaspBSD is not affiliated with the Raspberry Pi Foundation.</p>
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
+  </body>
+</html>
+
+
