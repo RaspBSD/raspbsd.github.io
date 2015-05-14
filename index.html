@@ -150,9 +150,17 @@
         <p><b>What is the difference between the Console Image and the Graphical Images?</b></p>
         <p>The Graphical Images currently only have a VideoCore kernel modules added to them.  In the future a GUI and other tools will be preloaded.  The console images do not have the VideoCore image and are designed to be used via serial or completely headless.</p>
         <p><b>What is the login credentials for the images?</b></p>
-        <p>The username is raspberry and the password is raspberry.  The root account does not have a password.</p>
+        <p>The username is raspberry and the password is raspberry.  The root account does not have a password.  <b>Note:</b> Login as the root user is not permitted over SSH.</p>
         <p><b>Where are the packages to install?</b></p>
         <p>Currently work is ongoing to build and publish offical FreeBSD packages.  Once those are published, these images will use them.</p>
+        <p>Try using the test packages by bootstrapping pkg:</p>
+        <pre>PACKAGESITE=http://chips.ysv.freebsd.org/packages/11armv6-default pkg</pre>
+        <p>Configure the pkg repo by adding the following to /usr/local/etc/pkg/repos/chips.conf:</p>
+        <pre>chips: {
+	url: "http://chips.ysv.freebsd.org/packages/11armv6-default",
+	mirror_type: "http",
+	enabled: yes,
+}</pre>
         <p><b>How are these images built?</b></p>
         <p>All images are built using <a href="https://github.com/freebsd/crochet">Crochet</a>.</p>
         <p><b>What is a Raspberry Pi?</b></p>
@@ -160,11 +168,13 @@
         <p><b>Where can I get a Raspberry Pi?</b></p>
         <p>Your local electronic shop or an online retailer like <a href="https://www.sparkfun.com/categories/233">Sparkfun</a>.</p>
         <p><b>What about support for the Raspberry Pi Camera?</b></p>
-        <p>Work is ongoing to add support for the Raspberry Pi Camera applications to The FreeBSD Ports Tree</p>
+        <p>Work is ongoing to add support for the Raspberry Pi Camera applications to The FreeBSD Ports Tree.</p>
         <p><b>How do I use these images?</b></p>
         <p><i>Note these images will overwrite the entire SD Card!</i></p>
         <p>For Windows decompress them using a tool like <a href="http://www.7-zip.org/">7-Zip</a> then copy the image to your SD Card using something like <a href="http://www.chrysocome.net/dd">DD for Windows</a>.</p>
-        <p>For Mac users decompress them using Archive Utility and then copy the image to your SD Card by running something like: <pre>sudo dd bs=1m if=FreeBSD-armv6-11.0-RPI-B-r282247.img of=/dev/disk2</pre></p>
+        <p>For Mac users decompress them using Archive Utility and then copy the image to your SD Card by running something like: <pre>sudo dd bs=1m if=FreeBSD-armv6-11.0-RPI-B-<i>r282247</i>.img of=/dev/disk2</pre></p>
+        <p><b>Are these images hard float or soft float?</b></p>
+        <p>Currently all FreeBSD ARM images are soft float.  Work is underway to switch them over to hard float.</p>
       </div>
 
       <div class="page-header">
