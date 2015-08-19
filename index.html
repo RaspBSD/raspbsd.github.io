@@ -152,15 +152,7 @@
         <p><b>What is the login credentials for the images?</b></p>
         <p>The username is raspberry and the password is raspberry.  The root account does not have a password.  <b>Note:</b> Login as the root user is not permitted over SSH.</p>
         <p><b>Where are the packages to install?</b></p>
-        <p>Currently work is ongoing to build and publish offical FreeBSD packages.  Once those are published, these images will use them.</p>
-        <p>Try using the test packages by bootstrapping pkg:</p>
-        <pre>PACKAGESITE=http://chips.ysv.freebsd.org/packages/11armv6-default pkg</pre>
-        <p>Configure the pkg repo by adding the following to /usr/local/etc/pkg/repos/chips.conf:</p>
-        <pre>chips: {
-	url: "http://chips.ysv.freebsd.org/packages/11armv6-default",
-	mirror_type: "http",
-	enabled: yes,
-}</pre>
+        <p>Currently work is ongoing to improve the offical FreeBSD packages.</p>
         <p><b>How are these images built?</b></p>
         <p>All images are built using <a href="https://github.com/freebsd/crochet">Crochet</a>.</p>
         <p><b>What is a Raspberry Pi?</b></p>
