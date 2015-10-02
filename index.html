@@ -12,9 +12,9 @@
     <title>Welcome to RaspBSD</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap theme -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="theme.css" rel="stylesheet">
@@ -24,6 +24,8 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </head>
 
   <body role="document">
@@ -43,7 +45,14 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="#download">Downloads</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Downloads <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="bananapi.html">Banana Pi</a></li>
+                <li><a href="bbb.html">BeagleBone Black & Green</a></li>
+                <li><a href="rpi.html">Raspberry Pi</a></li>
+              </ul>
+            </li>
             <li><a href="#image-info">Image Info</a></li>
             <li><a href="#about">About</a></li>
           </ul>
@@ -61,86 +70,33 @@
 
 
       <div class="page-header">
-        <h1>Download</h1>
-      </div>
-      <div class="page-header">
-        <a name="download"></a>
-        <h3>Raspberry Pi B and B+</h3>
+        <h1>Downloads</h1>
       </div>
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-2">
           <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Graphical Images</h3>
-            </div>
             <div class="panel-body">
-              Designed to be connected to a display and used with a keyboard/mouse.  Currently no GUI is enabled.
-              <ul>
-                <!--# include file="images/rpi-b-gui.html" -->
-              </ul>
+              <a href="bananapi.html">BananaPi</a>
             </div>
           </div>
         </div><!-- /.col-sm-6 -->
-        <div class="col-sm-6">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Console Images</h3>
-            </div>
-            <div class="panel-body">
-              Designed for serial console / network usage.
-              <ul>
-                <!--# include file="images/rpi-b-console.html" -->
-              </ul>
-            </div>
-          </div>
-        </div><!-- /.col-sm-6 -->
-      </div>
 
-      <div class="page-header">
-        <h3>Raspberry Pi 2 Model B</h3>
-      </div>
-      <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-3">
           <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Graphical Images</h3>
-            </div>
             <div class="panel-body">
-              Designed to be connected to a display and used with a keyboard/mouse.  Currently no GUI is enabled.
-              <ul>
-                <!--# include file="images/rpi2-gui.html" -->
-              </ul>
+              <a href="bbb.html">BeagleBone Black & Green</a>
             </div>
           </div>
         </div><!-- /.col-sm-6 -->
-        <div class="col-sm-6">
+
+        <div class="col-sm-4">
           <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Console Images</h3>
-            </div>
             <div class="panel-body">
-              Designed for serial console / network usage.
-              <ul>
-                <!--# include file="images/rpi2-console.html" -->
-              </ul>
+              <a href="raspberrypi.html">Raspberry Pi & Raspberry Pi 2</a>
             </div>
           </div>
         </div><!-- /.col-sm-6 -->
       </div>
-
-      <div class="page-header">
-        <h3>Banana Pi</h3>
-      </div>
-      <p>
-        Coming soon..
-      </p>
-
-      <div class="page-header">
-        <h3>BeagleBone Black</h3>
-      </div>
-      <p>
-        Coming soon..
-      </p>
 
       <div class="page-header">
         <h2>Image information</h2>
