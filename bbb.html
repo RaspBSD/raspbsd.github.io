@@ -61,48 +61,33 @@
 
 
       <div class="page-header">
-        <h1>Download</h1>
+        <h3>Download</h3>
       </div>
 
-      <div class="page-header">
-        <h3>BeagleBone Black</h3>
-      </div>
       <div class="row">
         <div class="col-sm-6">
           <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Graphical Images</h3>
-            </div>
             <div class="panel-body">
-              Designed to be connected to a display and used with a keyboard/mouse.  Currently no GUI is enabled.
+              <!-- Designed to be connected to a display and used with a keyboard/mouse.  Currently no GUI is enabled. -->
               <ul>
                 <!--# include file="images/bbb-gui.html" -->
               </ul>
             </div>
           </div>
         </div><!-- /.col-sm-6 -->
-        <div class="col-sm-6">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Console Images</h3>
-            </div>
-            <div class="panel-body">
-              Designed for serial console / network usage.
-              <ul>
-                <!--# include file="images/bbb-console.html" -->
-              </ul>
-            </div>
-          </div>
-        </div><!-- /.col-sm-6 -->
       </div>
 
       <div class="page-header">
-        <h2>Image information</h2>
+        <h3>Image information</h3>
       </div>
       <div>
         <a name="image-info"></a>
         <p><b>Connecting to these images</b></p>
         <p>These images have the USB configured to provide network and serial console.</p>
+        <p>For Windows, install this driver: <a href="http://beagleboard.org/static/Drivers/Windows/BONE_D64.exe">64-Bit</a> or <a href="http://beagleboard.org/static/Drivers/Windows/BONE_DRV.exe">32-Bit</a></p>
+	<p>For OS X, install the following drivers: <a href="http://beagleboard.org/static/Drivers/MacOSX/RNDIS/HoRNDIS.pkg">Network</a> and <a href="http://beagleboard.org/static/Drivers/MacOSX/FTDI/EnergiaFTDIDrivers2.2.18.pkg">Serial</a><br>
+	  Then ssh as so: <pre>ssh raspberry@192.168.7.2</pre>
+	</p>
       </div>
 
       <div class="well">
