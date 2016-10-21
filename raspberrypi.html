@@ -28,27 +28,36 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
     <script>
-      var xmlhttp = new XMLHttpRequest();
-      var url = "http://download.raspbsd.org/rpi3-gui.json";
+      var imglist = ["rpi-b-gui", "rpi2-gui", "rpi3-gui"];
 
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var myArr = JSON.parse(this.responseText);
-          parseimglist(myArr);
-        }
-      };
-      xmlhttp.open("GET", url, true);
-      xmlhttp.send();
+      function fetchjson(item) {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var myArr = JSON.parse(this.responseText);
+            parseimglist(myArr, item);
+          }
+        };
+        var url = "http://download.raspbsd.org/" + item + ".json";
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();
+      }
 
-      function parseimglist(arr) {
+      function parseimglist(arr, item) {
         var out = "";
         var i;
         for(i = 0; i < arr.img.length; i++) {
           out += '<a href="http://download.raspbsd.org/' + arr.img[i] + '">' +
           arr.img[i] + '</a><br>';
         }
-        document.getElementById("rpi3-gui").innerHTML = out;
+        document.getElementById(item).innerHTML = out;
       }
+
+      imglist.forEach(
+        function(item, index, array) {
+          fetchjson(item);
+        }
+      );
     </script>
   </head>
 
@@ -124,7 +133,7 @@
             <div class="panel-body">
               <!-- Designed to be connected to a display and used with a keyboard/mouse.  Currently no GUI is enabled. -->
               <ul>
-                <!--# include file="images/rpi2-gui.html" -->
+                <div id="rpi2-gui"></div>
               </ul>
             </div>
           </div>
@@ -141,7 +150,7 @@
             <div class="panel-body">
               <!-- Designed to be connected to a display and used with a keyboard/mouse.  Currently no GUI is enabled. -->
               <ul>
-                <!--# include file="images/rpi-b-gui.html" -->
+                <div id="rpi-b-gui"></div>
               </ul>
             </div>
           </div>
