@@ -26,6 +26,30 @@
     <![endif]-->
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script>
+      var xmlhttp = new XMLHttpRequest();
+      var url = "http://download.raspbsd.org/rpi3-gui.json";
+
+      xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var myArr = JSON.parse(this.responseText);
+          parseimglist(myArr);
+        }
+      };
+      xmlhttp.open("GET", url, true);
+      xmlhttp.send();
+
+      function parseimglist(arr) {
+        var out = "";
+        var i;
+        for(i = 0; i < arr.img.length; i++) {
+          out += '<a href="http://download.raspbsd.org/' + arr.img[i] + '">' +
+          arr.img[i] + '</a><br>';
+        }
+        document.getElementById("rpi3-gui").innerHTML = out;
+      }
+    </script>
   </head>
 
   <body role="document">
@@ -71,6 +95,23 @@
 
       <div class="page-header">
         <h3>Download</h3>
+      </div>
+
+      <div class="page-header">
+        <h3>Raspberry Pi 3</h3>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <!-- Designed to be connected to a display and used with a keyboard/mouse.  Currently no GUI is enabled. -->
+              <ul>
+                <div id="rpi3-gui"></div>
+              </ul>
+            </div>
+          </div>
+        </div><!-- /.col-sm-6 -->
       </div>
 
       <div class="page-header">
