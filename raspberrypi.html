@@ -118,6 +118,17 @@
               <ul>
                 <div id="rpi3-gui"></div>
               </ul>
+
+              <p>Currently there are no 12.x packages for arm64, so use the
+                11.x ones temporarily until the 12.x package runs start.</p>
+
+              <p>To bootstrap pkg, run:
+                <pre>env ABI=FreeBSD:11:aarch64 pkg bootstrap</pre></p>
+
+              <p>Then to set pkg to use the 11 repo, add the following to
+                /usr/local/etc/pkg.conf:</p>
+
+              <p><pre>ABI = "FreeBSD:11:aarch64"</pre></p>
             </div>
           </div>
         </div><!-- /.col-sm-6 -->
