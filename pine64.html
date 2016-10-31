@@ -9,7 +9,7 @@
     <meta name="author" content="Brad Davis">
     <!-- <link rel="icon" href="../../favicon.ico"> -->
 
-    <title>RaspBSD - BananaPi</title>
+    <title>RaspBSD - Pine64</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
@@ -26,6 +26,39 @@
     <![endif]-->
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script>
+      var imglist = ["pine64"];
+
+      function fetchjson(item) {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var myArr = JSON.parse(this.responseText);
+            parseimglist(myArr, item);
+          }
+        };
+        var url = "http://download.raspbsd.org/" + item + ".json";
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();
+      }
+
+      function parseimglist(arr, item) {
+        var out = "";
+        var i;
+        for(i = 0; i < arr.img.length; i++) {
+          out += '<a href="http://download.raspbsd.org/' + arr.img[i] + '">' +
+          arr.img[i] + '</a><br>';
+        }
+        document.getElementById(item).innerHTML = out;
+      }
+
+      imglist.forEach(
+        function(item, index, array) {
+          fetchjson(item);
+        }
+      );
+    </script>
   </head>
 
   <body role="document">
@@ -48,10 +81,10 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Downloads <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li class="active"><a href="#">Banana Pi</a></li>
+                <li><a href="bananapi.html">Banana Pi</a></li>
                 <li><a href="bbb.html">BeagleBone Black & Green</a></li>
-                <li><a href="pine64.html">Pine64</a></li>
                 <li><a href="raspberrypi.html">Raspberry Pi</a></li>
+                <li class="active"><a href="#">Pine64</a></li>
               </ul>
             </li>
             <li><a href="#image-info">Image Info</a></li>
@@ -65,13 +98,17 @@
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>RaspBSD on the BananaPi</h1>
-        <p>RaspBSD runs on the BananaPi using the following images.</p>
+        <h1>RaspBSD on the Pine64</h1>
+        <p>RaspBSD runs on the Pine64 using the following images.</p>
       </div>
 
 
       <div class="page-header">
         <h3>Download</h3>
+      </div>
+
+      <div class="page-header">
+        <h3>Pine64</h3>
       </div>
 
       <div class="row">
@@ -80,7 +117,7 @@
             <div class="panel-body">
               <!-- Designed to be connected to a display and used with a keyboard/mouse.  Currently no GUI is enabled. -->
               <ul>
-                <!--# include file="images/bananapi-gui.html" -->
+                <div id="pine64"></div>
               </ul>
             </div>
           </div>
